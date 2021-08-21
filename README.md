@@ -16,3 +16,5 @@ E para o cliente:
 
 sudo java -jar client.jar 
 
+![alt text](https://github.com/vnc10/ProjetoSD/blob/main/arqSQ.png)
+
