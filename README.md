@@ -5,6 +5,7 @@ O jogo é realizado da seguinte forma: o jogador escolhe uma sala para entrar, d
 Para se executar o projeto é necessario ter instalado o compilador kotlin, com o compilador já instalado, deve-se entrar na pasta 'WhoIAm' e executar os comandos:
 
 kotlinc MainServer.kt Controller.kt Game.kt Player.kt -include-runtime -d server.jar 
+
 kotlinc MainClient.kt Client.kt -include-runtime -d client.jar
 
 Após executado os comandos, para executar o servidor use o comando:
