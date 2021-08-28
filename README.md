@@ -16,7 +16,7 @@ E para o cliente:
 
 sudo java -jar client.jar 
 
-![alt text](https://github.com/vnc10/ProjetoSD/blob/main/arqSQ.png)
+![alt text](https://github.com/vnc10/ProjetoSD/blob/main/ArqWhoAmI.png)
 
  <h3> <b> Interface do Servidor: </b> </h3>
 
