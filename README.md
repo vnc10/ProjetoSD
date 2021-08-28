@@ -18,70 +18,88 @@ sudo java -jar client.jar
 
 ![alt text](https://github.com/vnc10/ProjetoSD/blob/main/ArqWhoAmI.png)
 
- <h3> <b> Interface do Servidor: </b> </h3>
+ <h3> <b> Interfaces: </b> </h3>
 
-<b> ConfigureGame(Socket) </b>
+***Controller:***
 
-Configuração do servidor, onde ele recebe por parâmetro o endereço que será iniciado o servidor via socket.
-Interface do Servidor:
+ *A interface Controller, é responsável por configurar a partida, inicializar o servidor e invocar o Game.
 
-**PlayGame(String)**
+***Parâmetros:***
 
-Inicia o jogo e recebe o nome do arquivo no qual será salvo a pontuação do jogo
+***namePlayers (obrigatório):***
 
+Lista com o nome dos jogadores que estarão na partida
 
-**Game(MutableList<>, int, int, String)**
+***players (obrigatório):***
 
-Controla a classe que contém os métodos utilizados pelo servidor na realização do jogo.
+Lista dos jogadores que estão na partida
 
-**playGame()**
+***subRound (obrigatório):***
 
-Inicia o jogo e controla a partida.
+Número de rodadas de perguntas/tentativas
 
-**configureRound()**
+***totalPoints (obrigatório):***
 
-Sorteio do mestre, mestre escolhe seu personagem e escreve a dica.
+Pontuação que será atribuída ao jogador que acertar o personagem
 
-**match()**
+***message (obrigatório):***
 
-Realiza o Controle de cada rodada.
+Input das mensagens enviadas para configuração do servidor
 
-**masterResponde()**
+***Game:***
 
-O mestre responde às perguntas dos jogadores.
+A interface Game, é usada para começar o jogo, configurar a rodada, verificar se o personagem está correto, apresentar a pontuação, salvar os pontos no banco de dados e mostrar o vencedor.
 
-**showHighScore()**
+***Parâmetros:***
 
-Apresenta a pontuação da partida.
+***players (obrigatório):***
 
-**saveArquive()**
+Lista de jogadores que vão participar da partida.
 
-Salve o arquivo contendo a pontuação da partida.
+***subRounds (obrigatório):***
 
-**sendMessageToAll(String)**
+Número de rodadas de perguntas/tentativas
 
-Função utilizada para envio de mensagem para todos os jogadores.
+***totalPoints (obrigatório):***
 
-**winner()**
+Pontuação que será atribuída ao jogador que acertar o personagem
 
-Define o vencedor e mostra na tela.
+***nameArquive (obrigatório):***
 
+Nome do arquivo que será salvo a pontuação da partida.
 
-<h3> <b> Interface do Cliente: </h3> </b>
+***Player:***
 
-**Client(Socket)**
+Interface responsável por controlar o estado de cada jogador dentro do jogo.
 
-Controla a classe que contém os métodos utilizados pelo cliente.
+***Parâmetros:***
 
-**start()**
+***socket (obrigatório):***
+	
+Responsável por armazenar o socket de comunicação de cada jogador.
 
-Controla a interação do cliente com o jogo.
+***nickName (obrigatório):***
 
-**cleanBuffer()**
+Responsável por armazenar o nome de cada jogador.
 
-Limpa o buffer de entrada do cliente.
+***score (obrigatório):***
+	
+Responsável por armazenar a pontuação do jogador.
 
-**PlayGame(String)**
+***wasMaster (obrigatório):***
 
-Inicia o jogo e recebe o nome do arquivo no qual será salvo a pontuação do jogo
+Responsável por armazenar o estado atual do cliente, podendo ser jogador ou mestre.
+
+***acertou (obrigatório):***
+
+Responsável por armazenar o estado atual do cliente da tentativa do jogador, podendo ser True quando a tentativa for acertada, ou False quando a tentativa for errada. 
+
+***mensageIn (obrigatório):***
+
+Responsável por receber as mensagens digitadas pelo jogador.
+
+***messageOut (obrigatório):***
+
+Responsável por mostrar ao jogador as mensagens enviadas pelo servidor do jogo.
+
 
